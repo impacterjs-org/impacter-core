@@ -1,11 +1,14 @@
 {
   "name": "impacter-core",
   "version": "0.0.1-alpha",
-  "description": "🔆 Impacter is a innovative framework for building web interfaces.",
+  "description": "🔆 Impacter is an innovative framework for building web interfaces.",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
@@ -26,9 +29,12 @@
   "author": "Steve Yu",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.5.0",
+    "husky": "^8.0.0",
     "prettier": "^3.0.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
-    "husky": "^8.0.0"
+    "vitepress": "1.0.0-rc.4",
+    "vue": "^3.3.4"
   }
 }
