@@ -1,6 +1,6 @@
-import { Materialable } from "../Icore/Materialable";
-import ImpacterImage from "../../graphics/ImpacterImage";
-import ImpacterColor from "./color/ImpacterColor";
+import { Materialable } from "../Icore/Materialable"
+import ImpacterImage from "../../graphics/ImpacterImage"
+import ImpacterColor from "./color/ImpacterColor"
 
 /**
  * Background
@@ -10,14 +10,14 @@ import ImpacterColor from "./color/ImpacterColor";
  * @Version 1.0
  */
 class Background implements Materialable {
-  private $content: ImpacterColor|ImpacterImage
+  private $content: ImpacterColor | ImpacterImage
 
   /**
    * construct by ImpacterColor or Image
    * @param content
    */
-  constructor(content: ImpacterColor|ImpacterImage) {
-    this.$content = content;
+  constructor(content: ImpacterColor | ImpacterImage) {
+    this.$content = content
   }
 
   /**
@@ -25,10 +25,10 @@ class Background implements Materialable {
    * @param htmlElement
    */
   material(htmlElement: HTMLElement): void {
-    if(this.$content instanceof ImpacterColor) {
-      htmlElement.style.backgroundColor = `${this.$content.toString()}`;
+    if (this.$content instanceof ImpacterColor) {
+      htmlElement.style.backgroundColor = `${this.$content.toString()}`
     }
   }
 }
 
-export default Background;
+export default Background

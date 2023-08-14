@@ -8,5 +8,5 @@
  * @Version 1.0
  */
 export interface Renderable {
-  render(): HTMLElement;
+  render(): HTMLElement
 }

@@ -9,5 +9,5 @@
  * @Version 1.0
  */
 export interface Materialable {
-  material(htmlElement: HTMLElement):void;
+  material(htmlElement: HTMLElement): void
 }

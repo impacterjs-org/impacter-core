@@ -39,7 +39,7 @@ enum Dir {
   /**
    * all is both top, bottom, leading and trailing
    */
-  all
+  all,
 }
 
-export default Dir;
+export default Dir

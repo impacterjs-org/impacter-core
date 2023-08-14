@@ -6,11 +6,11 @@
  * @Version 1.0
  */
 abstract class ImpacterObject {
-  protected $htmlElement!: HTMLElement;
+  protected $htmlElement!: HTMLElement
 
   constructor(tagName: string, create: boolean) {
-    if(create) this.$htmlElement = document.createElement(tagName);
+    if (create) this.$htmlElement = document.createElement(tagName)
   }
 }
 
-export default ImpacterObject;
+export default ImpacterObject

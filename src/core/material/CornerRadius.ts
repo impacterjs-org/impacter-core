@@ -1,4 +1,4 @@
-import { Materialable } from "../Icore/Materialable";
+import { Materialable } from "../Icore/Materialable"
 
 /**
  * CornerRadius
@@ -15,12 +15,12 @@ class CornerRadius implements Materialable {
    * @param radius
    */
   constructor(radius = 0) {
-    this.radius = radius;
+    this.radius = radius
   }
 
   material(htmlElement: HTMLElement): void {
-    htmlElement.style.borderRadius = `${this.radius}px`;
+    htmlElement.style.borderRadius = `${this.radius}px`
   }
 }
 
-export default CornerRadius;
+export default CornerRadius

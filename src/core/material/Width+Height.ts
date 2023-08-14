@@ -1,5 +1,5 @@
-import { Measure, Unit } from "./Unit+Measure";
-import { Materialable } from "../Icore/Materialable";
+import { Measure, Unit } from "./Unit+Measure"
+import { Materialable } from "../Icore/Materialable"
 
 /**
  * WidthHeightBase
@@ -12,11 +12,11 @@ class WidthHeightBase {
   $raw: string
 
   constructor(raw: string) {
-    this.$raw = raw;
+    this.$raw = raw
   }
 
   texture(): string {
-    return this.$raw;
+    return this.$raw
   }
 }
 
@@ -27,12 +27,12 @@ class WidthHeightBase {
  * @Date 2021/4/8 18:59
  * @Version 1.0
  */
-class Width extends WidthHeightBase implements Materialable{
+class Width extends WidthHeightBase implements Materialable {
   constructor(value: number, unit: Unit = Unit.Pixel) {
-    super(Measure.getMeasureString(unit, value));
+    super(Measure.getMeasureString(unit, value))
   }
   material(htmlElement: HTMLElement) {
-    htmlElement.style.width = this.$raw;
+    htmlElement.style.width = this.$raw
   }
 }
 
@@ -43,16 +43,13 @@ class Width extends WidthHeightBase implements Materialable{
  * @Date 2021/4/8 18:59
  * @Version 1.0
  */
-class Height extends WidthHeightBase implements Materialable{
+class Height extends WidthHeightBase implements Materialable {
   constructor(value: number, unit: Unit = Unit.Pixel) {
-    super(Measure.getMeasureString(unit, value));
+    super(Measure.getMeasureString(unit, value))
   }
   material(htmlElement: HTMLElement) {
-    htmlElement.style.height = this.$raw;
+    htmlElement.style.height = this.$raw
   }
 }
 
-export {
-  Width,
-  Height
-};
+export { Width, Height }

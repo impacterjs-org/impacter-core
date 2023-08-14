@@ -1,4 +1,4 @@
-import RawColor from "./RawColor";
+import RawColor from "./RawColor"
 
 /**
  * HexColor
@@ -9,8 +9,8 @@ import RawColor from "./RawColor";
  */
 class HexColor extends RawColor {
   constructor(hexRaw: string) {
-    super(hexRaw);
+    super(hexRaw)
   }
 }
 
-export default HexColor;
+export default HexColor

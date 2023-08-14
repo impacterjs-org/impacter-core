@@ -1,4 +1,4 @@
-import RawColor from "./RawColor";
+import RawColor from "./RawColor"
 
 /**
  * RGBAColor
@@ -7,11 +7,11 @@ import RawColor from "./RawColor";
  * @Date 2021/4/11 11:38
  * @Version 1.0
  */
-class RGBAColor extends RawColor{
-  private $red: number;
-  private $green: number;
-  private $blue: number;
-  private $alpha: number;
+class RGBAColor extends RawColor {
+  private $red: number
+  private $green: number
+  private $blue: number
+  private $alpha: number
 
   /**
    * construct by red green blue alpha data
@@ -21,12 +21,12 @@ class RGBAColor extends RawColor{
    * @param alpha
    */
   constructor(red: number, green: number, blue: number, alpha: number) {
-    super(`rgba(${red}, ${green}, ${blue}, ${alpha})`);
-    this.$red = red;
-    this.$green = green;
-    this.$blue = blue;
-    this.$alpha = alpha;
+    super(`rgba(${red}, ${green}, ${blue}, ${alpha})`)
+    this.$red = red
+    this.$green = green
+    this.$blue = blue
+    this.$alpha = alpha
   }
 }
 
-export default RGBAColor;
+export default RGBAColor

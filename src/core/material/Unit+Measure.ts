@@ -6,7 +6,9 @@
  * @Version 1.0
  */
 enum Unit {
-  Percent, Pixel, REM
+  Percent,
+  Pixel,
+  REM,
 }
 
 /**
@@ -23,17 +25,14 @@ class Measure {
    */
   static getMeasureString(unit: Unit, size: number): string {
     switch (unit) {
-    case Unit.Percent:
-      return `${size}%`;
-    case Unit.Pixel:
-      return `${size}px`;
-    case Unit.REM:
-      return `${size}rem`;
+      case Unit.Percent:
+        return `${size}%`
+      case Unit.Pixel:
+        return `${size}px`
+      case Unit.REM:
+        return `${size}rem`
     }
   }
 }
 
-export {
-  Unit,
-  Measure
-};
+export { Unit, Measure }

@@ -5,61 +5,60 @@
  * @Date 2021/4/8 19:06
  * @Version 1.0
  */
-import ImpacterObject from "../core/ImpacterObject";
-import RenderableImpacterObject from "../core/RenderableImpacterObject";
-import { Height, Width } from "../core/material/Width+Height";
+import ImpacterObject from "../core/ImpacterObject"
+import RenderableImpacterObject from "../core/RenderableImpacterObject"
+import { Height, Width } from "../core/material/Width+Height"
 
-
-class FlexStack<T extends ImpacterObject> extends RenderableImpacterObject<T>{
+class FlexStack<T extends ImpacterObject> extends RenderableImpacterObject<T> {
   /**
    * Append All of the RenderableImpacterObject
    * and set the flex layout
    * @param rios
    */
   constructor(...rios: RenderableImpacterObject<any>[]) {
-    super();
+    super()
     for (let i = 0; i < rios.length; i++)
-      this.$htmlElement.appendChild(rios[i].render().cloneNode(true));
-    this.$htmlElement.style.display = "flex";
-    this.$htmlElement.style.justifyContent = "center";
-    this.$htmlElement.style.alignItems = "center";
+      this.$htmlElement.appendChild(rios[i].render().cloneNode(true))
+    this.$htmlElement.style.display = "flex"
+    this.$htmlElement.style.justifyContent = "center"
+    this.$htmlElement.style.alignItems = "center"
   }
 
   /**
    * justifyContent to flex-start
    */
   leading(): T {
-    this.$htmlElement.style.justifyContent = "flex-start";
-    return this.$chainSource as T;
+    this.$htmlElement.style.justifyContent = "flex-start"
+    return this.$chainSource as T
   }
 
   /**
    * justifyContent to flex-end
    */
   trailing(): T {
-    this.$htmlElement.style.justifyContent = "flex-end";
-    return this.$chainSource as T;
+    this.$htmlElement.style.justifyContent = "flex-end"
+    return this.$chainSource as T
   }
 
   /**
    * alignItems to flex-start
    */
   top(): T {
-    this.$htmlElement.style.alignItems = "flex-start";
-    return this.$chainSource as T;
+    this.$htmlElement.style.alignItems = "flex-start"
+    return this.$chainSource as T
   }
 
   /**
    * alignItems to flex-end
    */
   bottom(): T {
-    this.$htmlElement.style.alignItems = "flex-end";
-    return this.$chainSource as T;
+    this.$htmlElement.style.alignItems = "flex-end"
+    return this.$chainSource as T
   }
 
   render(): HTMLElement {
-    super.render();
-    return this.$htmlElement;
+    super.render()
+    return this.$htmlElement
   }
 }
 
@@ -70,16 +69,16 @@ class FlexStack<T extends ImpacterObject> extends RenderableImpacterObject<T>{
  * @Date 2021/4/8 19:06
  * @Version 1.0
  */
-class HStack extends FlexStack<HStack>{
+class HStack extends FlexStack<HStack> {
   constructor(...rios: RenderableImpacterObject<any>[]) {
-    super(...rios);
-    this.$chainSource = this;
+    super(...rios)
+    this.$chainSource = this
   }
 
   render(): HTMLElement {
-    super.render();
-    this.$htmlElement.style.flexDirection = "row";
-    return this.$htmlElement;
+    super.render()
+    this.$htmlElement.style.flexDirection = "row"
+    return this.$htmlElement
   }
 }
 
@@ -90,15 +89,15 @@ class HStack extends FlexStack<HStack>{
  * @Date 2021/4/8 19:06
  * @Version 1.0
  */
-class Group extends FlexStack<Group>{
+class Group extends FlexStack<Group> {
   constructor(...rios: RenderableImpacterObject<any>[]) {
-    super(...rios);
-    this.$chainSource = this;
+    super(...rios)
+    this.$chainSource = this
   }
 
   render(): HTMLElement {
-    super.render();
-    return this.$htmlElement;
+    super.render()
+    return this.$htmlElement
   }
 }
 
@@ -111,14 +110,14 @@ class Group extends FlexStack<Group>{
  */
 class VStack extends FlexStack<VStack> {
   constructor(...rios: RenderableImpacterObject<any>[]) {
-    super(...rios);
-    this.$chainSource = this;
+    super(...rios)
+    this.$chainSource = this
   }
 
   render(): HTMLElement {
-    super.render();
-    this.$htmlElement.style.flexDirection = "column";
-    return this.$htmlElement;
+    super.render()
+    this.$htmlElement.style.flexDirection = "column"
+    return this.$htmlElement
   }
 }
 
@@ -129,19 +128,23 @@ class VStack extends FlexStack<VStack> {
  * @Date 2021/4/8 19:06
  * @Version 1.0
  */
-class ZStack extends FlexStack<ZStack>{
+class ZStack extends FlexStack<ZStack> {
   /**
    * the default width and height using pixel unit
    * @param width
    * @param height
    * @param rios
    */
-  constructor(width: number, height: number, ...rios: RenderableImpacterObject<any>[]) {
-    super(...rios);
-    this.$chainSource = this;
-    this.$width = new Width(width);
-    this.$height = new Height(height);
-    this.zSetting();
+  constructor(
+    width: number,
+    height: number,
+    ...rios: RenderableImpacterObject<any>[]
+  ) {
+    super(...rios)
+    this.$chainSource = this
+    this.$width = new Width(width)
+    this.$height = new Height(height)
+    this.zSetting()
   }
 
   /**
@@ -153,27 +156,22 @@ class ZStack extends FlexStack<ZStack>{
    */
   zSetting(): void {
     // change the position
-    const children: HTMLCollection = this.$htmlElement.children;
+    const children: HTMLCollection = this.$htmlElement.children
     for (let i = 0; i < children.length; i++) {
-      const child = children[i] as HTMLElement;
-      child.style.position = "absolute";
+      const child = children[i] as HTMLElement
+      child.style.position = "absolute"
     }
-    this.$htmlElement.style.position = "relative";
+    this.$htmlElement.style.position = "relative"
     // change the width and height
     // because the constructor have the width and height
     // the exclamation mark is security.
-    this.$htmlElement.style.width = this.$width!.texture();
-    this.$htmlElement.style.height = this.$height!.texture();
+    this.$htmlElement.style.width = this.$width!.texture()
+    this.$htmlElement.style.height = this.$height!.texture()
   }
   render(): HTMLElement {
-    super.render();
-    return this.$htmlElement;
+    super.render()
+    return this.$htmlElement
   }
 }
 
-export {
-  HStack,
-  VStack,
-  ZStack,
-  Group
-};
+export { HStack, VStack, ZStack, Group }

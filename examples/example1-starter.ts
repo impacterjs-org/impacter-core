@@ -1,8 +1,8 @@
-import { Text, Group, VStack, RGBColor, Color } from "../src/Impacter";
-import ImpacterApp from "../src/Impacter";
+import { Text, Group, VStack, RGBColor, Color } from "../src/Impacter"
+import ImpacterApp from "../src/Impacter"
+import "./style.css"
 
-
-const color = new RGBColor(200, 100, 100);
+const color = new RGBColor(200, 100, 100)
 
 // Impact.js
 // Build App without css
@@ -33,8 +33,7 @@ ImpacterApp.render(
       .background(new RGBColor(100, 250, 100))
       .padding(30)
       .margin(20)
-      .cornerRadius(20)
-    ,
+      .cornerRadius(20),
     new Text("Description")
       .bold()
       .foregroundColor(Color.White)
@@ -42,9 +41,9 @@ ImpacterApp.render(
       .border(1, color)
       .padding(10)
       .cornerRadius(10)
-      .margin(20)
+      .margin(20),
   )
     .background(Color.Coral)
-    .cornerRadius(20)
-  ,document.getElementById("impacter-app")
-);
+    .cornerRadius(20),
+  document.getElementById("impacter-app"),
+)

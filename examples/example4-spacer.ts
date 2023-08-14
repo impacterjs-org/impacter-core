@@ -1,4 +1,12 @@
-import ImpacterApp, { Color, Unit, Text, Spacer, HStack, VStack } from "../src/Impacter";
+import ImpacterApp, {
+  Color,
+  Unit,
+  Text,
+  Spacer,
+  HStack,
+  VStack,
+} from "../src/Impacter"
+import "./style.css"
 
 // Impacter.js
 // Build App without css
@@ -7,20 +15,15 @@ ImpacterApp.render(
     new Text("Start"),
     new Spacer(),
     new Text("Hihi"),
-    new HStack(
-      new Text("Left"),
-      new Spacer(),
-      new Text("right")
-    )
+    new HStack(new Text("Left"), new Spacer(), new Text("right"))
       .background(Color.Chocolate)
-      .width(80, Unit.Percent)
-    ,
+      .width(80, Unit.Percent),
     new Text("Hihi"),
     new Spacer(),
-    new Text("End")
+    new Text("End"),
   )
     .width(100, Unit.Percent)
     .height(100, Unit.Percent)
-    .background(Color.Coral)
-  ,document.getElementById("impacter-app")
-);
+    .background(Color.Coral),
+  document.getElementById("impacter-app"),
+)

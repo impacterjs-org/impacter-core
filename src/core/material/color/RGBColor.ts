@@ -1,6 +1,6 @@
-import { Materialable } from "../../Icore/Materialable";
-import RawColor from "./RawColor";
-import HexColor from "./HexColor";
+import { Materialable } from "../../Icore/Materialable"
+import RawColor from "./RawColor"
+import HexColor from "./HexColor"
 
 /**
  * RGBColor
@@ -9,10 +9,10 @@ import HexColor from "./HexColor";
  * @Date 2021/4/8 18:50
  * @Version 1.0
  */
-class RGBColor extends RawColor implements Materialable{
-  private $red: number;
-  private $green: number;
-  private $blue: number;
+class RGBColor extends RawColor implements Materialable {
+  private $red: number
+  private $green: number
+  private $blue: number
 
   /**
    * construct by red green blue data
@@ -21,15 +21,15 @@ class RGBColor extends RawColor implements Materialable{
    * @param blue
    */
   constructor(red: number, green: number, blue: number) {
-    super(`rgb(${red}, ${green}, ${blue})`);
-    this.$red = red;
-    this.$green = green;
-    this.$blue = blue;
+    super(`rgb(${red}, ${green}, ${blue})`)
+    this.$red = red
+    this.$green = green
+    this.$blue = blue
   }
 
   toHexColor(): HexColor {
-    return new HexColor("#a83838");
+    return new HexColor("#a83838")
   }
 }
 
-export default RGBColor;
+export default RGBColor

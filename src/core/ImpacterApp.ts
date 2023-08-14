@@ -1,4 +1,4 @@
-import { Renderable } from "./Icore/Renderable";
+import { Renderable } from "./Icore/Renderable"
 
 /**
  * ImpacterApp
@@ -8,31 +8,33 @@ import { Renderable } from "./Icore/Renderable";
  * @Version 1.0
  */
 class ImpacterApp {
-  static initFirstElement(renderableObject: Renderable, impactRoot:HTMLElement | null) {
+  static initFirstElement(
+    renderableObject: Renderable,
+    impactRoot: HTMLElement | null,
+  ) {
     // not null
-    if(impactRoot == null) {
-      throw new Error("Fatal Error: can not initialize this HTMLElement");
+    if (impactRoot == null) {
+      throw new Error("Fatal Error: can not initialize this HTMLElement")
     }
     // remove all children
-    if(impactRoot.children.length != 0) {
-      const children = impactRoot.children;
-      for(let i = 0; i < children.length; i++)
-        children[i].remove();
+    if (impactRoot.children.length != 0) {
+      const children = impactRoot.children
+      for (let i = 0; i < children.length; i++) children[i].remove()
     }
     // default setting
-    impactRoot.style.width = "100%";
-    impactRoot.style.height = "100vh";
-    impactRoot.style.display = "flex";
-    impactRoot.style.justifyContent = "center";
-    impactRoot.style.alignItems = "center";
+    impactRoot.style.width = "100%"
+    impactRoot.style.height = "100vh"
+    impactRoot.style.display = "flex"
+    impactRoot.style.justifyContent = "center"
+    impactRoot.style.alignItems = "center"
     // render one impact object
-    impactRoot.appendChild(renderableObject.render());
+    impactRoot.appendChild(renderableObject.render())
   }
 
-  static render(renderableObject: Renderable, impactRoot:HTMLElement | null) {
+  static render(renderableObject: Renderable, impactRoot: HTMLElement | null) {
     // init first element
-    this.initFirstElement(renderableObject, impactRoot);
+    this.initFirstElement(renderableObject, impactRoot)
   }
 }
 
-export default ImpacterApp;
+export default ImpacterApp

@@ -1,4 +1,4 @@
-import RawColor from "./RawColor";
+import RawColor from "./RawColor"
 
 /**
  * Color
@@ -9,7 +9,7 @@ import RawColor from "./RawColor";
  */
 class Color extends RawColor {
   // Transparent
-  static Transparent = new RawColor("Transparent");
+  static Transparent = new RawColor("Transparent")
   // Other colors
   static AliceBlue = new RawColor("AliceBlue")
   static AntiqueWhite = new RawColor("AntiqueWhite")
@@ -154,7 +154,7 @@ class Color extends RawColor {
   static WhiteSmoke = new RawColor("WhiteSmoke")
   static Yellow = new RawColor("Yellow")
   static YellowGreen = new RawColor("YellowGreen")
-  static defaultColor = Color.Black;
+  static defaultColor = Color.Black
 }
 
-export default Color;
+export default Color
